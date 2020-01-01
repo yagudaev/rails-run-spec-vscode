@@ -85,6 +85,11 @@
           "default": "",
           "description": "Defines a custom command to run for specs (i.e. 'spring rspec')"
         },
+        "typescriptreact.specCommand": {
+          "type": "string",
+          "default": "yarn jest",
+          "description": "Defines a custom command to run for specs (i.e. 'spring rspec')"
+        },
         "ruby.specFocusTerminal": {
           "type": "boolean",
           "default": true,

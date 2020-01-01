@@ -120,7 +120,13 @@ function shouldClearTerminal(): unknown {
 }
 
 function customSpecCommand(): unknown {
-  return vscode.workspace.getConfiguration("ruby").get("specCommand");
+  let editor: vscode.TextEditor = vscode.window.activeTextEditor;
+  switch (editor.document.languageId) {
+    case "typescriptreact":
+      return vscode.workspace.getConfiguration("typescriptreact").get("specCommand");
+    default:
+      return vscode.workspace.getConfiguration("ruby").get("specCommand");
+  }
 }
 
 function isZeusActive(): unknown {
