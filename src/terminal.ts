@@ -1,8 +1,6 @@
-"use strict";
-
 import * as vscode from "vscode";
 
-import toSpecPath from "./utils/toSpecPath";
+import toSpecPath, {isSpecDirectory, isSpec} from "./utils/toSpecPath";
 
 interface IOptions {
   path?: string;
@@ -122,6 +120,8 @@ function shouldClearTerminal(): unknown {
 function customSpecCommand(): unknown {
   let editor: vscode.TextEditor = vscode.window.activeTextEditor;
   switch (editor.document.languageId) {
+    case "typescript":
+      return vscode.workspace.getConfiguration("typescript").get("specCommand");
     case "typescriptreact":
       return vscode.workspace.getConfiguration("typescriptreact").get("specCommand");
     default:
@@ -147,12 +147,4 @@ function zeusTerminalInit(): void {
 
   activeTerminals[terminalName] = zeusTerminal;
   zeusTerminal.sendText("zeus start");
-}
-
-function isSpec(fileName: string, pattern: string): boolean {
-  return fileName.indexOf(`_${pattern}.rb`) > -1;
-}
-
-function isSpecDirectory(fileName: string, pattern: string): boolean {
-  return fileName.indexOf(pattern) > -1 && fileName.indexOf(".rb") == -1;
 }
