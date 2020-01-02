@@ -1,9 +1,9 @@
 {
-  "name": "rails-run-spec-vscode",
-  "displayName": "Rails Run Specs",
-  "description": "Rails Run Spec Files",
-  "version": "0.1.3",
-  "publisher": "noku",
+  "name": "run-spec-vscode",
+  "displayName": "Run Specs",
+  "description": "Run Spec Files",
+  "version": "0.1.4",
+  "publisher": "yagudaev",
   "icon": "rspec.png",
   "galleryBanner": {
     "color": "#232323",
@@ -14,9 +14,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/noku/rails-run-spec-vscode.git"
+    "url": "https://github.com/yagudaev/rails-run-spec-vscode.git"
   },
-  "homepage": "https://github.com/noku/rails-run-spec-vscode",
+  "homepage": "https://github.com/yagudaev/rails-run-spec-vscode",
   "categories": [
     "Other"
   ],
