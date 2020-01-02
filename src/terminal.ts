@@ -120,6 +120,8 @@ function shouldClearTerminal(): unknown {
 function customSpecCommand(): unknown {
   let editor: vscode.TextEditor = vscode.window.activeTextEditor;
   switch (editor.document.languageId) {
+    case "javascript":
+      return vscode.workspace.getConfiguration("javascript").get("specCommand");
     case "typescript":
       return vscode.workspace.getConfiguration("typescript").get("specCommand");
     case "typescriptreact":

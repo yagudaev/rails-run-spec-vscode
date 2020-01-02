@@ -90,6 +90,11 @@
           "default": "yarn jest",
           "description": "Defines a custom command to run for specs (i.e. 'yarn test')"
         },
+        "javascript.specCommand": {
+          "type": "string",
+          "default": "yarn cypress run --headed --no-exit --spec",
+          "description": "Defines a custom command to run for specs (i.e. 'yarn test')"
+        },
         "typescriptreact.specCommand": {
           "type": "string",
           "default": "yarn jest",

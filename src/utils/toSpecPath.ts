@@ -15,6 +15,8 @@ export default function toSpecPath(filePath: string, pattern: string): string {
 export function isSpec(fileName: string, pattern: string): boolean {
   let editor: vscode.TextEditor = vscode.window.activeTextEditor;
   switch (editor.document.languageId) {
+    case "javascript":
+      return fileName.indexOf(`.${pattern}.js`) > -1;
     case "typescript":
       return fileName.indexOf(`.${pattern}.ts`) > -1;
     case "typescriptreact":
@@ -29,6 +31,8 @@ export function isSpec(fileName: string, pattern: string): boolean {
 export function isSpecDirectory(fileName: string, pattern: string): boolean {
   let editor: vscode.TextEditor = vscode.window.activeTextEditor;
   switch (editor.document.languageId) {
+    case "javascript":
+      return fileName.indexOf(pattern) > -1 && fileName.indexOf(`.js`) === -1;
     case "typescript":
       return fileName.indexOf(pattern) > -1 && fileName.indexOf(`.ts`) === -1;
     case "typescriptreact":
